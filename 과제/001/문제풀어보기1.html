@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+  /*      
+1. 나이를 입력받아서  성인인지 판단하는 프로그램 작성하기 
+    - 나이를 입력받는다.   prompt()
+    - 나이를 판단한다  
+    - 알림창에 정보를 출력한다. alert()
+2. 수를 입력받아 원하는 만큼 별 출력하기
+3. 수를 입력받아 원하는 만큼 내이름 출력하기   
+4.  점수를 입력받아 학점을 구하시오 ( 90점이상 A ,  80점 이상B , 나머지 F )
+5.  국어, 영어, 수학점수를 입력받아 평균을 출력하시오
+6.  국어, 영어점수 입력 받아  모두 90점 이상이면 장학금 지급 출력
+7.  카드사용금액을 입력받아  50만원이상  "vvip"  30이상이면 "vip"  나머지 "bronze" 출력
+*/
+        document.write("<h1>1. 나이를 입력받아서 성인인지 판단하는 프로그램 작성하기</h1><hr>");
+        let age = Number(prompt("1. 나이 입력"));
+        if (isNaN(age) || age < 0){
+            alert("잘못된 입력입니다.");
+            document.write("잘못된 입력입니다.");
+        } else{
+            if (age >= 20){
+                alert("성인입니다.");
+                document.write(`나이: ${age}, 성인입니다.`);
+            } else{
+                alert("성인이 아닙니다.");
+                document.write(`나이: ${age}, 성인이 아닙니다.`);
+            }
+        }
+        document.write("<hr>");
+        
+        document.write("<h1>2. 수를 입력받아 원하는 만큼 별 출력하기</h1><hr>");
+        let number1 = parseInt(prompt("2. 숫자 입력"));
+        if (isNaN(number1) || number1 < 0){
+            document.write("잘못된 입력입니다.");
+        } else{
+            for(let i=0; i<number1; i++){
+            document.write("*");
+            }
+        }
+        document.write("<hr>");
+
+        document.write("<h1>3. 수를 입력받아 원하는 만큼 내 이름 출력하기</h1><hr>");
+        let number2 = parseInt(prompt("3. 숫자 입력"));
+        if (isNaN(number2) || number2 < 0){
+            document.write("잘못된 입력입니다.");
+        } else{
+            for(let i=0; i<number2; i++){
+            document.write("용지민<br>");
+            }
+        }
+        document.write("<hr>");
+
+        document.write("<h1>4. 점수를 입력받아 학점을 구하시오 (90점 이상 A, 80점 이상 B, 나머지 F)</h1><hr>");
+        let score = Number(prompt("4. 점수 입력"));
+        let grade;
+        if (score >= 90){
+            grade = "A";
+        } else if (score >= 80){
+            grade = "B";
+        } else{
+            grade = "F";
+        }
+        document.write(`점수: ${score}, 학점: ${grade}`);
+        document.write("<hr>");
+
+        document.write("<h1>5. 국어, 영어, 수학 점수를 입력받아 평균을 출력하시오.</h1><hr>");
+        let kor, eng, math;
+        kor = Number(prompt("5. 국어 점수"));
+        eng = Number(prompt("5. 영어 점수"));
+        math = Number(prompt("5. 수학 점수"));
+        let avg = (kor + eng + math) / 3;
+        document.write(`국어: ${kor}, 영어: ${eng}, 수학: ${math}, 평균: ${avg}`);
+        document.write("<hr>");
+
+        document.write("<h1>6. 국어, 영어 점수 입력받아 모두 90점 이상이면 장학금 지급 출력</h1><hr>");
+        let kor2, eng2;
+        kor2 = Number(prompt("6. 국어 점수"));
+        eng2 = Number(prompt("6. 영어 점수"));
+        document.write(`국어: ${kor2}, 영어: ${eng2}, `);
+        if (kor2 >= 90 && eng2 >= 90){
+            document.write("장학금 지급");
+        } else{
+            document.write("장학금 미지급");
+        }
+        document.write("<hr>");
+
+        document.write("<h1>7. 카드사용금액을 입력받아 50만원 이상 'vvip', 30만원 이상 'vip', 나머지 'bronze' 출력</h1><hr>");
+        let card = Number(prompt("7. 카드사용금액 입력"));
+        let level;
+        if (card >= 500000){
+            level = "vvip";
+        } else if (card >= 300000){
+            level = "vip";
+        } else{
+            level = "bronze";
+        }
+        document.write(`카드사용금액: ${card}, 등급: ${level}`);
+    </script>
+</body>
+</html>
