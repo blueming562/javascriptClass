@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function cook(){
+            document.write("<h1> 요리시작</h1>")
+            document.write("1. 안심200g 올리브유 20g,소금 0.5t ,후추 0.5 t, 저민마늘 조각 ,향초 등을 뿌려 시즈닝을 한다.");
+            document.write("2. 버터, 통마늘, 허브, 아스파라거스등의 재료를 손질.");
+            document.write("3. 시즈닝으로부터 몇시간이 흐른뒤 팬에 기름을 자작하게 두른다.");
+            document.write("4. 적당하게 기름에서 살짝 흰연기가 오르면 고기를 올린다.");
+            document.write("5. 30초단위로 한번씩 뒤집어 가며 고기두께에 맞게 굽는다.");
+            document.write("6. 굽기단계가 끝나면 약불에 버터 한토막과 재료를 투입.");
+            document.write("7. 버터가 녹으면 스푼으로 고기와 재료에 지속적으려 뿌려준다.");
+            document.write("8. 썰어서 먹는다.");
+            return "스테이크.jpg";
+        }
+
+
+        function cook2( 고기,  소금, 후추 , 올리브유 ){
+            document.write("<h1>주어진 재료로 요리시작</h1>")
+            document.write("1. " + 고기+ 올리브유 + 소금+ 후추 +"저민마늘 조각 ,향초 등을 뿌려 시즈닝을 한다." );
+            document.write("2. 버터, 통마늘, 허브, 아스파라거스등의 재료를 손질.");
+            document.write("3. 시즈닝으로부터 몇시간이 흐른뒤 팬에 기름을 자작하게 두른다.");
+            document.write("4. 적당하게 기름에서 살짝 흰연기가 오르면 고기를 올린다.");
+            document.write("5. 30초단위로 한번씩 뒤집어 가며 고기두께에 맞게 굽는다.");
+            document.write("6. 굽기단계가 끝나면 약불에 버터 한토막과 재료를 투입.");
+            document.write("7. 버터가 녹으면 스푼으로 고기와 재료에 지속적으려 뿌려준다.");
+            document.write("8. 썰어서 먹는다.");
+            return "스테이크.jpg";
+        }
+
+
+
+        let food =  cook();
+        alert( food);
+
+        let 고기="안심 300g";       
+        let 소금 ="2꼬집";
+        let 후추= "1t";
+        let 올리브유 ="50g"; 
+
+        let food2  =cook2(고기,  소금, 후추, 올리브유);
+        alert( food2);
+   
+
+
+    </script>
+</body>
+</html>
