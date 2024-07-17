@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>가위바위보</h1>
+    <hr>
+
+    <script>
+        let arr = ["가위", "바위", "보"];
+        let userSel;
+        let comSel;
+        
+        while(true){
+            while(true){
+                userSel = Number(prompt("가위: 1, 바위: 2, 보: 3"));
+                if(!(userSel == 1 || userSel == 2 || userSel == 3)){
+                    alert("잘못된 입력");
+                } else{
+                    break;
+                }
+            }
+
+            comSel = Math.floor(Math.random() * 3);
+            document.write(`사용자의 선택: ${arr[userSel - 1]}<br>`);
+            document.write(`컴퓨터의 선택: ${arr[comSel]}<br>`);
+
+            if(arr[userSel - 1] == arr[comSel]){
+                document.write("무승부<hr>");
+                alert("무승부. 다시 선택하세요.");
+                continue;
+            }
+
+            switch(arr[userSel - 1]){
+                case "가위":
+                    if (arr[comSel] == "바위"){
+                        document.write("사용자 패배");
+                        break;
+                    } else if (arr[comSel] == "보"){
+                        document.write("사용자 승리");
+                        break;
+                    }
+                case "바위":
+                    if (arr[comSel] == "가위"){
+                        document.write("사용자 승리");
+                        break;
+                    } else if (arr[comSel] == "보"){
+                        document.write("사용자 패배");
+                        break;
+                    }
+                case "보":
+                    if (arr[comSel] == "가위"){
+                        document.write("사용자 패배");
+                        break;
+                    } else if (arr[comSel] == "바위"){
+                        document.write("사용자 승리");
+                        break;
+                    }
+            }
+            document.write("<hr>");
+            break;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let now = new Date();
+
+        let birthYear, birthMonth, birthDay;
+        while(true){
+            birthYear = Number(prompt("태어난 년도를 입력하세요."));
+            if (isNaN(birthYear) || birthYear % 1 != 0){
+                continue;
+            } else{
+                break;
+            }
+        }
+        while(true){
+            birthMonth = Number(prompt("태어난 달을 입력하세요."));
+            if (isNaN(birthMonth) || birthMonth % 1 != 0 || birthMonth < 1 || birthMonth > 12){
+                continue;
+            } else{
+                break;
+            }
+        }
+        while(true){
+            birthDay = Number(prompt("태어난 일을 입력하세요."));
+            if (isNaN(birthDay) || birthDay % 1 != 0 || birthDay < 1 || birthDay > 31){
+                continue;
+            } else{
+                break;
+            }
+        }
+        let birth = new Date(`${birthYear}-${birthMonth}-${birthDay}`);
+        document.write(birth + "<hr>");
+
+        let presentYear = now.getFullYear();
+        let birthYear2 = birth.getFullYear();
+        let yearDiff = presentYear - birthYear2;
+        console.log(yearDiff);
+        let korAge = yearDiff + 1;
+        let age = yearDiff - 1;
+        console.log(age);
+
+        let presentYearBirth = new Date(`2024-${birthMonth}-${birthDay}`);
+
+        if (now >= presentYearBirth){ // 올해 생일 지났는지 체크
+            age += 1;
+        }
+
+        document.write(`${korAge}세 (만 ${age}세)`);
+    </script>
+</body>
+</html>

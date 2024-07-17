@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <button class="select" id="1">1</button>
+    <button class="select" id="2">2</button>
+    <button class="select" id="3">3</button>
+    <div id="answer"></div>
+
+    <script>
+        let randInt = Math.floor(Math.random() * 10) + 1; // 1~10 사이의 정수
+        let com1, com2, com3;
+        let coms = [];
+        let cnt = 0;
+        let answer;
+
+        let str = `<p>랜덤으로 선택된 숫자: ${randInt}</p><hr>`
+
+        while(true){
+            com1 = Math.floor(Math.random() * 10) + 1;
+            com2 = Math.floor(Math.random() * 10) + 1;
+            com3 = Math.floor(Math.random() * 10) + 1;
+
+            if (com1 == com2 || com1 == com3 || com2 == com3){
+                continue;
+            }
+            cnt++;
+            coms = [com1, com2, com3];
+
+            str += `<p>${cnt}</p><p>1번: ???</p><p>2번: ???</p><p>3번: ???</p><hr>`;
+
+            if (com1 == randInt || com2 == randInt || com3 == randInt){
+                for(let i=0; i<coms.length; i++){
+                    if (coms[i] == randInt){
+                        answer = i + 1;
+                    }
+                }
+                alert("숫자를 맞혔습니다. 반복을 종료합니다.");
+                break;
+            } else{
+                alert("숫자를 맞히지 못했습니다. 다시 선택합니다.");
+            }
+        }
+
+        let result = document.querySelector("#result");
+        result.innerHTML = str;
+
+        let select = document.querySelectorAll(".select");
+        for(let i=0; i<select.length; i++){
+            select[i].addEventListener("click", function(){
+                if (this.id == answer){
+                    alert("정답입니다.");
+                } else{
+                    alert("틀렸습니다.");
+                }
+                document.querySelector("#answer").innerHTML = `<p>반복 횟수: ${cnt}회</p><p>정답: ${answer}번</p><p>사용자의 선택: ${this.id}번</p>`;
+            })
+        }
+    </script>
+</body>
+</html>

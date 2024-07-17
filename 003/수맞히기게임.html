@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let randInt = Math.floor(Math.random() * 100) + 1;
+        let inputInt;
+        let cnt = 0;
+
+        while(true){
+            while(true){
+                inputInt = Number(prompt("숫자를 입력하세요. (1 ~ 100)"));
+                
+                if (isNaN(inputInt) || inputInt % 1 != 0 || inputInt < 1 || inputInt > 100){
+                    alert("잘못된 입력");
+                } else{
+                    break;
+                }
+            }
+            cnt++;
+            document.write(`입력: ${inputInt}<hr>`);
+            
+            if (inputInt == randInt){
+                alert("정답입니다.");
+                break;
+            } else if (inputInt > randInt){
+                alert("down");
+                continue;
+            } else{
+                alert("up");
+                continue;
+            }
+        }
+        document.write(`정답: ${randInt}, 입력 횟수: ${cnt}<hr>`);
+
+        if (cnt <= 3){
+            document.write("3회 이내에 정답을 맞혔습니다.");
+        }
+    </script>
+</body>
+</html>

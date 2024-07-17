@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>태어난지 며칠 구하기</h2>
+    <script>
+        let current = new Date();
+        let bornDay = new Date("2000-07-08");
+
+        let toNow = current.getTime(); //밀리세컨드 (천분의 1초)
+        let toFirst = bornDay.getTime();
+
+        let passedTime = toNow - toFirst;
+        console.log(passedTime);
+        let passedDay = Math.round(passedTime / (1000 * 60 * 60 * 24));
+                                    //초//분//시//24
+        console.log(passedDay);
+        console.log(passedDay / 365);
+
+        alert(passedDay);
+    </script>
+</body>
+</html>
