@@ -45,7 +45,7 @@
         let age = yearDiff - 1;
         console.log(age);
 
-        let presentYearBirth = new Date(`2024-${birthMonth}-${birthDay}`);
+        let presentYearBirth = new Date(`${presentYear}-${birthMonth}-${birthDay}`);
 
         if (now >= presentYearBirth){ // 올해 생일 지났는지 체크
             age += 1;

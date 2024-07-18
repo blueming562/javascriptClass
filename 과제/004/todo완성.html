@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .wrap{
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding: 20px;
+            border:1px solid black;
+
+        }
+
+
+        header{
+            padding: 10px;
+            border-radius: 5px;
+            background-color: gainsboro;
+            text-align: center;
+            margin-bottom: 30px;
+
+
+        }
+
+        .todoEditWrap{         
+            display: flex;    
+            border:1px solid black;    
+            margin-bottom: 50px;    
+        }
+
+
+        .todoEditWrap input{
+          flex:1;     
+          padding: 15px;      
+        }
+
+        .todoEditWrap button{
+            width:80px;
+            height: 60px;
+        }
+
+        
+        .search input{
+            width: 100%;
+            height: 40px;
+        }
+
+        .todoItemWrap{
+           
+           margin-top: 30px;
+           border-top: 1px solid black;
+           padding: 10px;
+        }
+
+        .todoItem{
+            display: flex;
+            
+        }
+
+        .title_col{
+            flex:1;
+        }
+
+        .date_col{
+            margin-right: 15px;
+        }
+
+    </style>
+
+    
+
+
+</head>
+<body>
+
+    <div class="wrap">
+
+        <!-- header-->
+       <header>
+            <h2>오늘은  😊  </h2>
+            <div id="date">  Mon jan 02</div>
+       </header>
+
+       <!-- todo 작성 영역 -->
+       <div class="todoEdit">
+        <h4>새로운 todo 작성하기🖊</h4>
+        <div class="todoEditWrap">
+            <input type="text"  placeholder="일정추가" id="todo"><button onclick="addTodo()">등록</button>
+        </div>
+       </div>
+
+       <!-- todo list-->
+       <div class="todoList">
+            <h4>Todo List</h4>
+            <!-- 검색영역-->
+            <div class="search"> 
+                <input type="text" id="search" onkeyup="search()"  placeholder="검색어를 입력하세요">
+            </div>
+
+            <!-- 일정 item 영역-->
+            <div  class="todoItemWrap"> 
+                <!--item -->
+                <!-- <div class="todoItem">
+                    <div class="checkbox_col"> <input type="checkbox"  /></div>
+                    <div class="title_col" >  </div>
+                    <div class="date_col"> </div>
+                    <div  class="btn_col" ><button>삭제</button></div>
+                </div> -->
+            </div>
+       </div>
+
+    </div>    
+
+    <script>
+        window.addEventListener("load", function(){
+            let today = new Date();
+            let year = today.getFullYear();
+            let month = today.getMonth() + 1;
+            if (month < 10){
+                month = `0${month}`;
+            }
+            let date = today.getDate();
+            let day = today.getDay();
+            let days = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+
+            let dateInfo = document.querySelector("#date");
+            dateInfo.innerHTML = `${year}-${month}-${date} ${days[day]}`;
+        });
+
+        function addTodo(){
+            let todoTag = document.querySelector("#todo");
+            let todo = todoTag.value;
+
+            let todoItem = document.createElement("div");
+            todoItem.className = "todoItem";
+
+            let now = new Date();
+            let year = now.getFullYear();
+            let month = now.getMonth() + 1;
+            if (month < 10){
+                month = `0${month}`;
+            }
+            let date = now.getDate();
+            let hour = now.getHours();
+            let minute = now.getMinutes();
+            let second = now.getSeconds();
+
+            todoItem.innerHTML = `<div class="checkbox_col"> <input type="checkbox"  /></div>
+                                    <div class="title_col" > ${todo} </div>
+                                    <div class="date_col"> ${year}-${month}-${date} ${hour}:${minute}:${second} </div>
+                                    <div  class="btn_col" ><button onclick="deleteTodo(this)">삭제</button></div>`;
+            
+            document.querySelector(".todoList").appendChild(todoItem);
+        }
+
+        function deleteTodo(obj){
+            let item = obj.parentElement.parentElement;
+            item.remove();
+        }
+
+        function search(){
+            let search = document.querySelector("#search").value;
+            let todos = document.querySelectorAll("#title_col");
+            for(let i=0; i<todos.length; i++){
+                todos[i] = todos[i].innerHTML;
+
+                if (todos[i].includes(search)){
+                }
+            }
+        }
+    </script>
+</body>
+</html>
