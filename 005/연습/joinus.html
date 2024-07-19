@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 1200px;
+        }
+
+        header{
+            border: 1px solid black;
+            height: 100px;
+            background-color: rgb(245, 248, 248);
+            position: relative;
+        }
+
+        .title{
+            position: absolute;
+            left: 10px;
+            top: 20px;
+        }
+
+        .search{
+            border: 1px solid black;
+            width: 300px;
+            height: 50px;
+            position: absolute;
+            right: 10px;
+            bottom: 20px;
+            display: flex;
+            background-color: white;
+        }
+
+        .search input{
+            width: 230px;
+            margin-left: 20px;
+            border: none;
+            outline: none;
+        }
+
+        .search_btn{
+            width: 40px;
+            height: 40px;
+            /* border: 1px solid black; */
+            background-image: url(https://cdn-icons-png.flaticon.com/512/107/107122.png);
+            background-size: cover;
+            background-position: center;
+            margin-top: 5px;
+        }
+
+        nav{
+            height: 40px;
+            padding: 20px;
+            background-color: rgb(232, 243, 243);
+        }
+
+        nav ul{
+            margin: 0;
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li{
+            margin-left: 20px;
+        }
+
+        table{
+            border: 1px solid rgb(227, 216, 216);
+            border-collapse: collapse;
+            width: 800px;
+        }
+
+        tr{
+            height: 40px;
+        }
+
+        tr:nth-child(3), tr:nth-child(7){
+            height: 70px;
+        }
+
+        td{
+            border: 1px solid rgb(227, 216, 216);
+            font-size: 12px;
+        }
+
+        td:nth-child(1){
+            text-align: center;
+        }
+
+        form input{
+            width: 150px;
+            height: 30px;
+        }
+
+        span{
+            color: red;
+        }
+
+        form select{
+            width: 150px;
+            height: 30px;
+        }
+
+        form button{
+            border: none;
+            width: 150px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="title">
+                <img src="../images/logo.png" alt="">
+            </div>
+            <div class="search">
+                <input type="text">
+                <div class="search_btn"></div>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="">로그인</a></li>
+                <li><a href="">회원가입</a></li>
+                <li><a href="">홈으로</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <form>
+                <table>
+                    <caption>회원가입</caption>
+                    <tr>
+                        <td>이름</td><td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>아이디</td><td><input type="text">
+                            <button>중복확인</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>비밀번호</td>
+                        <td>
+                            <input type="text"><br>
+                            <span>※비밀번호는 8자리 이상 영문숫자를 작성해 주세요</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>비밀번호확인</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>이메일</td>
+                        <td>
+                            <input type="text">@<input type="text">
+                            <select name="" id="">
+                                <option value="">선택하세요</option>
+                                <option value="">naver.com</option>
+                                <option value="">google.com</option>
+                            </select>
+                            <button>중복확인</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>학년/반</td>
+                        <td>
+                            <select name="" id="">
+                                <option value="">선택하세요</option>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                            </select> 학년
+                            <select name="" id="">
+                                <option value="">선택하세요</option>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                            </select> 반
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="submit">가입</button>
+                            <button type="reset">취소</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            border: 1px solid black;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        header{
+            /* border: 1px solid black; */
+            height: 100px;
+            background-color: rgb(245, 248, 248);
+            position: relative;
+        }
+
+        header .title{
+            /* border: 1px solid black; */
+            /* width: 200px; */
+            /* height: 80px; */
+            position: absolute;
+            left: 10px;
+            top: 20px;
+            /* background-image: url(../images/logo.png);
+            background-size: cover;
+            background-position: center; */
+            /* margin-left: 30px; */
+        }
+
+        header .title img{
+            height: 70px;
+        }
+
+        header .search{
+            border: 1px solid black;
+            width: 300px;
+            height: 50px;
+            position: absolute;
+            right: 10px;
+            bottom: 20px;
+            display: flex;
+            background-color: white;
+        }
+
+        header .search input{
+            width: 230px;
+            margin-left: 20px;
+            border: none;
+            outline: none;
+        }
+
+        .search_btn{
+            /* border: 1px solid black; */
+            width: 40px;
+            height: 40px;
+            background-image: url(https://cdn-icons-png.flaticon.com/512/107/107122.png);
+            background-size: cover;
+            margin-top: 5px;
+        }
+
+        nav{
+            border: 1px solid black;
+            height: 40px;
+            padding: 20px;
+            background-color: rgb(232, 243, 243);
+        }
+
+        nav ul{
+            margin: 0;
+            list-style: none;
+            display: flex;
+            /* border: 1px solid black; */
+        }
+
+        nav ul li{
+            /* border: 1px solid black; */
+            padding: 0 5px;
+        }
+
+        nav ul li a{
+            text-decoration: none;
+            color: black;
+        }
+
+        section{
+            height: 600px;
+        }
+
+        section ul{
+            padding: 0;
+            margin: 0 auto;
+            list-style: none;
+            /* border: 1px solid red; */
+            width: 950px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        section ul li{
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            border: 0.5px solid rgb(255, 241, 241);
+            position: relative;
+        }
+
+        .course-name{
+            width: 130px;
+            padding: 10px;
+            background-color: black;
+            color: red;
+            position: absolute;
+            top: 0;
+        }
+
+        section ul li img{
+            width: 200px;
+            height: 200px;
+        }
+
+        footer{
+            border: 1px solid black;
+            height: 60px;
+            display: flex;
+            background-color: rgb(223, 239, 239);
+        }
+
+        footer div{
+            /* border: 1px solid black; */
+            width: 33%;
+            height: 60px;
+            /* line-height: 100px; */
+            margin-left: 10px;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="title"><img src="../images/logo.png" alt=""></div>
+            <div class="search">
+                <input type="text">
+                <div class="search_btn"></div>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="">로그인</a></li>
+                <li><a href="">회원가입</a></li>
+                <li><a href="">홈으로</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <ul>
+                <li>
+                    <div class="course-name">bigdata</div>
+                    <img src="../images/img01.png">
+                    <p>프로젝트기반 빅데이터분석 과정</p>
+                </li>
+                <li>
+                    <div class="course-name">Android</div>
+                    <img src="../images/img02.png">
+                    <p>자바(JAVA) & 안드로이드 개발자 양성과정</p>
+                </li>
+                <li>
+                    <div class="course-name">Front</div>
+                    <img src="../images/img03.png">
+                    <p>Web기반 프론트엔드 자바개발자 양성과정</p>
+                </li>
+            </ul>
+        </section>
+
+        <footer>
+            <div><img src="../images/footer_acorn.png" alt=""></div>
+            <div>(주)에이콘이즈 에이콘아카데미(홍대)</div>
+            <div>COPYRIGHT(C) HBILAB ALL RIGHTS RESERVED.</div>
+        </footer>
+    </div>
+</body>
+</html>

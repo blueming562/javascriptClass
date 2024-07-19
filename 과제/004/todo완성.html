@@ -125,6 +125,9 @@
                 month = `0${month}`;
             }
             let date = today.getDate();
+            if (date < 10){
+                date = `0${date}`;
+            }
             let day = today.getDay();
             let days = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
 
@@ -146,9 +149,21 @@
                 month = `0${month}`;
             }
             let date = now.getDate();
+            if (date < 10){
+                date = `0${date}`;
+            }
             let hour = now.getHours();
+            if (hour < 10){
+                hour = `0${hour}`;
+            }
             let minute = now.getMinutes();
+            if (minute < 10){
+                minute = `0${minute}`;
+            }
             let second = now.getSeconds();
+            if (second < 10){
+                second = `0${second}`;
+            }
 
             todoItem.innerHTML = `<div class="checkbox_col"> <input type="checkbox"  /></div>
                                     <div class="title_col" > ${todo} </div>
@@ -164,12 +179,13 @@
         }
 
         function search(){
-            let search = document.querySelector("#search").value;
-            let todos = document.querySelectorAll("#title_col");
+            let search = document.querySelector("#search").value.toLowerCase();
+            let todos = document.querySelectorAll(".title_col");
             for(let i=0; i<todos.length; i++){
-                todos[i] = todos[i].innerHTML;
-
-                if (todos[i].includes(search)){
+                if (todos[i].innerHTML.toLowerCase().includes(search)){
+                    todos[i].parentElement.style.display = "flex";
+                } else{
+                    todos[i].parentElement.style.display = "none";
                 }
             }
         }

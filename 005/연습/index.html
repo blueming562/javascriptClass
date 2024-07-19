@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            border: 1px solid black;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        header{
+            /* border: 1px solid black; */
+            height: 100px;
+            background-color: rgb(245, 248, 248);
+            position: relative;
+        }
+
+        header .title{
+            /* border: 1px solid black; */
+            width: 200px;
+            height: 80px;
+            position: absolute;
+            top: 0;
+            background-image: url(../images/logo.png);
+            background-size: cover;
+            background-position: center;
+            margin-left: 30px;
+        }
+
+        header .search{
+            border: 1px solid black;
+            width: 300px;
+            height: 50px;
+            position: absolute;
+            right: 0;
+            bottom: 5px;
+            display: flex;
+            background-color: white;
+        }
+
+        header .search input{
+            width: 230px;
+            margin-left: 20px;
+            border: none;
+            outline: none;
+        }
+
+        .search_btn{
+            /* border: 1px solid black; */
+            width: 40px;
+            height: 40px;
+            background-image: url(https://cdn-icons-png.flaticon.com/512/107/107122.png);
+            background-size: cover;
+            margin-top: 5px;
+        }
+
+        nav{
+            border: 1px solid black;
+            height: 60px;
+        }
+
+        nav ul{
+            list-style: none;
+            display: flex;
+            /* border: 1px solid black; */
+        }
+
+        nav ul li{
+            /* border: 1px solid black; */
+            padding: 0 5px;
+        }
+
+        nav ul li a{
+            text-decoration: none;
+            color: black;
+        }
+
+        section{
+            /* border: 1px solid black; */
+        }
+
+        section ul{
+            padding: 0;
+            margin: 0 auto;
+            list-style: none;
+            /* border: 1px solid red; */
+            width: 950px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        section ul li{
+            border: 1px solid rgb(207, 207, 207);
+            width: 300px;
+            height: 300px;
+            text-align: center;
+        }
+
+        section ul li img{
+            margin-top: 10px;
+        }
+
+        footer{
+            border: 1px solid black;
+            height: 100px;
+            display: flex;
+        }
+
+        footer div{
+            /* border: 1px solid black; */
+            width: 33.3%;
+            height: 100px;
+            line-height: 100px;
+            margin-left: 10px;
+        }
+
+        footer div img{
+            /* border: 1px solid black; */
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="title"></div>
+            <div class="search">
+                <input type="text">
+                <div class="search_btn"></div>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="">로그인</a></li>
+                <li><a href="">회원가입</a></li>
+                <li><a href="">홈으로</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <ul>
+                <li>
+                    <img src="../images/img01.png">
+                    <p>자바웹개발과정</p>
+                    <p>07.01개강</p>
+                </li>
+                <li>
+                    <img src="../images/img01.png">
+                    <p>자바웹개발과정</p>
+                    <p>07.01개강</p>
+                </li>
+                <li>
+                    <img src="../images/img01.png">
+                    <p>자바웹개발과정</p>
+                    <p>07.01개강</p>
+                </li>
+                <li>
+                    <img src="../images/img01.png">
+                    <p>자바웹개발과정</p>
+                    <p>07.01개강</p>
+                </li>
+                <li>
+                    <img src="../images/img01.png">
+                    <p>자바웹개발과정</p>
+                    <p>07.01개강</p>
+                </li>
+                <li>
+                    <img src="../images/img01.png">
+                    <p>자바웹개발과정</p>
+                    <p>07.01개강</p>
+                </li>
+            </ul>
+        </section>
+
+        <footer>
+            <div><img src="../images/footer_acorn.png" alt=""></div>
+            <div>(주)에이콘이즈 에이콘아카데미(홍대)</div>
+            <div>COPYRIGHT(C) HBILAB ALL RIGHTS RESERVED.</div>
+        </footer>
+    </div>
+</body>
+</html>
