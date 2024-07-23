@@ -9,6 +9,11 @@
             list-style: none;
         }
 
+        ul li{
+            position: relative;
+            /* border: 1px solid black; */
+        }
+
         nav{
             height: 100px;
             background-color: aquamarine;
@@ -99,6 +104,17 @@
         .search_list{
             display: none;
         }
+
+        span{
+            font-size: 12px;
+            color: purple;
+            position: absolute;
+            right: 30px;
+        }
+
+        span:hover{
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -120,31 +136,76 @@
     <!-- 검색바 영역 -->
     <div class="search">
         <div class="search_bar">
-            <input type="text" onfocus="showList()" onblur="hideList()">
+            <input type="text" onfocus="showList()" onblur="hideList()" onkeyup="addItem(event)">
             <!-- 검색목록 영역 -->
             <ul class="search_list">
-                <li>모자</li>
-                <li>선크림</li>
-                <li>반바지</li>
             </ul>
         </div>
     </div>
 
     <script>
+        let searchList = [];
+        
         function showList(){
             // 검색목록 영역 보이기
             // 검색바의 크기를 auto로 설정(내용만큼 크기가 결정됨)
             let search_list = document.querySelector(".search_list");
+
+            let existingList = localStorage.getItem("search");
+            if (existingList != null){
+                searchList = JSON.parse(existingList);
+                let str = "";
+                for(let i=0; i<searchList.length; i++){
+                    str += `<li id='${i}'>${searchList[i]} <span onclick='deleteItem(this)'>삭제</span></li>`;
+                }
+                search_list.innerHTML = str;
+            }
+
             let search_bar = document.querySelector(".search_bar");
             search_list.style.display = "block";
             search_bar.style.height = "auto";
         }
 
         function hideList(){
-            let search_list = document.querySelector(".search_list");
-            let search_bar = document.querySelector(".search_bar");
-            search_list.style.display = "none";
-            search_bar.style.height = "60px";
+            setTimeout(function(){
+                let search_list = document.querySelector(".search_list");
+                let search_bar = document.querySelector(".search_bar");
+
+                search_list.style.display = "none";
+                search_bar.style.height = "60px";
+            }, 5000);
+
+            // let search_list = document.querySelector(".search_list");
+            // let search_bar = document.querySelector(".search_bar");
+
+            // search_list.style.display = "none";
+            // search_bar.style.height = "60px";
+        }
+
+        function addItem(e){
+            if (e.keyCode === 13){
+                let item = document.querySelector("input");
+                searchList.push(item.value);
+                localStorage.setItem("search", JSON.stringify(searchList));
+                alert(`${item.value} 검색 중`);
+                item.value = "";
+                item.focus();
+                
+                // showList();
+            }
+        }
+
+        function deleteItem(obj){
+            let li = obj.parentElement;
+            let index = li.id;
+
+            alert(`${searchList[index]} 삭제`);
+
+            searchList.splice(index, 1);
+
+            localStorage.setItem("search", JSON.stringify(searchList));
+
+            showList();
         }
     </script>
 </body>
