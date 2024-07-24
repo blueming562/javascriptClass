@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 1200px;
+        }
+        header{
+            border: 1px solid;
+            height: 100px;
+            background-color: rgb(245, 248, 248);
+            position: relative;
+        }
+        .title{
+            position: absolute;
+            left: 20px;
+            top: 10px;
+        }
+        .search{
+            border: 1px solid;
+            position: absolute;
+            right: 10px;
+            bottom: 20px;
+            display: flex;
+        }
+        .search_bar{
+            border: none;
+            outline: none;
+        }
+        .search_btn{
+            width: 40px;
+            height: 40px;
+            background-image: url(../005/images/검색.png);
+            background-size: cover;
+            background-position: center;
+        }
+        nav{
+            border: 1px solid;
+            height: 40px;
+            padding: 20px;
+            background-color: rgb(232, 243, 243);
+        }
+        nav ul{
+            list-style: none;
+            display: flex;
+        }
+        nav ul li{
+            margin-left: 10px;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: black;
+        }
+        section{
+            border: 1px solid;
+            height: 600px;
+        }
+        section ul{
+            list-style: none;
+            display: flex;
+            padding: 0;
+            width: 1000px;
+            margin: 20px auto;
+        }
+        section ul li{
+            border: 0.5px solid  rgb(255 , 241 , 241 );
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        section ul li img{
+            width: 200px;
+            height: 220px;
+        }
+        section ul li p{
+            font-size: 12px;
+        }
+        .course{
+            width: 130px;
+            padding: 10px;
+            color: red;
+            background-color: black;
+            position: absolute;
+            top: 0;
+        }
+        footer{
+            border: 1px solid;
+            height: 60px;
+            background-color:  rgb(233 , 239 , 239 );
+            display: flex;
+        }
+        .item{
+            /* border: 1px solid; */
+            width: 33%;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="title">
+                <img src="../005/images/logo.png">
+            </div>
+            <div class="search">
+                <input type="text" class="search_bar">
+                <div class="search_btn"></div>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="">로그인</a></li>
+                <li><a href="">회원가입</a></li>
+                <li><a href="">홈으로</a></li>
+            </ul>
+        </nav>
+        <section>
+            <ul>
+                <li>
+                    <img src="../005/images/img01.png">
+                    <p>프로젝트기반 빅데이터분석 과정</p>
+                    <div class="course">bigdata</div>
+                </li>
+                <li>
+                    <img src="../005/images/img02.png">
+                    <p>자바(JAVA) & 안드로이드 개발자 양성과정</p>
+                    <div class="course">Android</div>
+                </li>
+                <li>
+                    <img src="../005/images/img03.png">
+                    <p>Web기반 프론트엔드 자바개발자 양성과정</p>
+                    <div class="course">Front</div>
+                </li>
+            </ul>
+        </section>
+        <footer>
+            <div class="item"><img src="../005/images/footer_acorn.png"></div>
+            <div class="item">(주)에이콘이즈 에이콘아카데미(홍대)</div>
+            <div class="item">COPYRIGHT(C) HBILAB ALL RIGHTS RESERVED</div>
+        </footer>
+    </div>
+</body>
+</html>
