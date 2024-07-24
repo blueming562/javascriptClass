@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        header{
+            border: 1px solid;
+            height: 100px;
+            background-color: rgb(245, 248, 248);
+            position: relative;
+        }
+        .title{
+            position: absolute;
+            left: 20px;
+            top: 10px;
+        }
+        .search{
+            border: 1px solid;
+            position: absolute;
+            right: 10px;
+            bottom: 20px;
+            display: flex;
+            width: 200px;
+            height: 50px;
+        }
+        .search_bar{
+            border: none;
+            outline: none;
+            width: 150px;
+        }
+        .search_btn{
+            width: 50px;
+            height: 50px;
+            background-image: url(../005/images/검색.png);
+            background-size: cover;
+            background-position: center;
+        }
+        nav{
+            border: 1px solid;
+            height: 40px;
+            padding: 20px;
+            background-color: rgb(232, 243, 243);
+        }
+        nav ul{
+            list-style: none;
+            display: flex;
+            margin: 0;
+        }
+        nav ul li{
+            margin-left: 10px;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: black;
+        }
+        section{
+            border: 1px solid;
+            height: 600px;
+        }
+        section table{
+            width: 800px;
+            border: 1px solid rgb(227, 216, 216);
+            margin: 0 auto;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        section table td{
+            border: 1px solid rgb(227, 216, 216);
+            font-size: 12px;
+        }
+        tr:nth-child(3), tr:nth-child(7){
+            height: 70px;
+        }
+        td:nth-child(1){
+            text-align: center;
+        }
+        section table input, select{
+            width: 150px;
+            height: 30px;
+        }
+        section table button{
+            width: 150px;
+            height: 40px;
+            border: 0px;
+        }
+        section span{
+            color: red;
+        }
+        footer{
+            border: 1px solid;
+            height: 60px;
+            background-color:  rgb(233 , 239 , 239 );
+            display: flex;
+        }
+        .item{
+            /* border: 1px solid; */
+            width: 33%;
+            height: 60px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="title">
+                <img src="../005/images/logo.png">
+            </div>
+            <div class="search">
+                <input type="text" class="search_bar">
+                <div class="search_btn"></div>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="joinus.html">회원가입</a></li>
+                <li><a href="index.html">홈으로</a></li>
+            </ul>
+        </nav>
+        <section>
+            <table>
+                <caption>회원가입</caption>
+                <tr>
+                    <td>
+                        이름
+                    </td>
+                    <td>
+                        <input type="text" id="username">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        아이디
+                    </td>
+                    <td>
+                        <input type="text" id="userid">
+                        <button>중복확인</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        비밀번호
+                    </td>
+                    <td>
+                        <input type="password" id="userpw">
+                        <div>
+                            <span>※비밀번호는 8자리 이상 영문숫자로 작성해 주세요</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        비밀번호확인
+                    </td>
+                    <td>
+                        <input type="password" id="userpw2">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        이메일
+                    </td>
+                    <td>
+                        <input type="text" id="useremail">@<input type="text" id="useremail2">
+                        <select name="" id="domain" onchange="setDomain()">
+                            <option value="">선택하세요</option>
+                            <option value="naver.com">naver.com</option>
+                            <option value="google.com">google.com</option>
+                        </select>
+                        <button>중복확인</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        학년/반
+                    </td>
+                    <td>
+                        <select name="" id="">
+                            <option value="">선택하세요</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                        학년
+                        <select name="" id="">
+                            <option value="">선택하세요</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                        반
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button onclick="checkInfo()">가입</button>
+                        <button>취소</button>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <footer>
+            <div class="item"><img src="../005/images/footer_acorn.png"></div>
+            <div class="item">(주)에이콘이즈 에이콘아카데미(홍대)</div>
+            <div class="item">COPYRIGHT(C) HBILAB ALL RIGHTS RESERVED</div>
+        </footer>
+    </div>
+
+    <script>
+        function checkInfo(){
+            let username = document.querySelector("#username");
+            let userid = document.querySelector("#userid");
+            let userpw = document.querySelector("#userpw");
+            let userpw2 = document.querySelector("#userpw2");
+            let useremail = document.querySelector("#useremail");
+            let useremail2 = document.querySelector("#useremail2");
+
+            if(username.value == ""){
+                alert("이름 입력하세요");
+                username.focus()
+            } else if(userid.value == ""){
+                alert("아이디 입력하세요");
+                userid.focus();
+            } else if(userpw.value == ""){
+                alert("비밀번호 입력하세요");
+                userpw.focus();
+            } else if(userpw2.value == ""){
+                alert("비밀번호확인을 설정하세요");
+                userpw2.focus();
+            } else if(useremail.value == ""){
+                alert("이메일 입력하세요");
+                useremail.focus();
+            } else if(useremail2.value == ""){
+                alert("도메인을 설정하세요");
+                useremail2.focus();
+            } else{
+                alert("회원가입 성공");
+            }
+        }
+
+        function setDomain(){
+            let domain = document.querySelector("#domain");
+            let useremail2 = document.querySelector("#useremail2");
+            useremail2.value = domain.options[domain.selectedIndex].value;
+        }
+    </script>
+</body>
+</html>
