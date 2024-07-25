@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--폰트어썸 CDN : -->
+    <script src="https://kit.fontawesome.com/4ec79785b5.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            border: 1px solid;
+            height: 65px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            background-color: white;
+        }
+        .title{
+            /* border: 1px solid; */
+            width: 65px;
+            height: 35px;
+            padding-right: 35px;
+        }
+        .title img{
+            width: 65px;
+            height: 35px;
+        }
+        .menu ul{
+            /* border: 1px solid; */
+            list-style: none;
+            display: flex;
+            padding-right: 150px;
+        }
+        .menu ul li{
+            /* border: 1px solid; */
+            font-weight: bold;
+            font-size: 18px;
+            padding-right: 30px;
+        }
+        .menu a{
+            text-decoration: none;
+            color: rgb(71, 71, 71);
+        }
+        .menu a:hover{
+            color: rgb(121, 121, 121);
+        }
+        .search{
+            /* border: 1px solid; */
+            padding-right: 10px;
+            position: relative;
+        }
+        .search input{
+            width: 280px;
+            height: 40px;
+            background-color: rgb(243, 243, 243);
+            font-size: 16px;
+            border: none;
+            outline: none;
+            padding-left: 10px;
+            border-radius: 5px;
+        }
+        .search .xmark{
+            /* border: 1px solid; */
+            color: rgb(100, 100, 100);
+            position: absolute;
+            right: 25px;
+            top: 10px;
+            font-size: 14px;
+            display: none;
+        }
+        .search .xmark:hover{
+            cursor: pointer;
+        }
+        .chat{
+            /* border: 1px solid; */
+        }
+        .chat button{
+            width: 95px;
+            height: 40px;
+            background-color: white;
+            border: 1px solid rgb(177, 177, 177);
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .chat button:hover{
+            background-color: rgb(243, 243, 243);
+            color: rgb(121, 121, 121);
+            cursor: pointer;
+        }
+        section{
+            border: 1px solid;
+            /* height: 780px; */
+            height: 5000px;
+            background-color: rgb(255, 250, 224);
+            margin-top: 65px;
+        }
+        section h1{
+            font-size: 55px;
+            color: rgb(44, 44, 44);
+        }
+        section p{
+            font-size: 20px;
+            color: rgb(119, 119, 119);
+        }
+        section button{
+            background-color: rgb(255, 111, 15);
+            color: white;
+            border: none;
+            font-weight: bold;
+            padding: 18px 30px;
+            font-size: 15px;
+            border-radius: 10px;
+            width: 180px;
+        }
+        section button:hover{
+            background-color: rgb(214, 93, 12);
+            cursor: pointer;
+        }
+        section i{
+            padding-right: 10px;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <a href="main.html">
+                <img src="images/logo.svg">
+            </a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="">중고거래</a></li>
+                <li><a href="">동네업체</a></li>
+                <li><a href="">알바</a></li>
+                <li><a href="">부동산</a></li>
+                <li><a href="">중고차 직거래</a></li>
+            </ul>
+        </div>
+        <div class="search">
+            <input type="text" id="search_word" onkeyup="showXmark()" placeholder="물품이나 동네를 검색해보세요">
+            <div class="xmark" onclick="deleteSearchWord()"><i class="fa-solid fa-circle-xmark"></i></div>
+        </div>
+        <div class="chat">
+            <button>채팅하기</button>
+        </div>
+    </header>
+    <section>
+        <div>
+            <h1>
+                당신 근처의<br>
+                지역 생활 커뮤니티
+            </h1>
+            <p>
+                동네라서 가능한 모든 것<br>
+                당근에서 가까운 이웃과 함께해요.
+            </p>
+            <button><i class="fa-brands fa-google-play"></i>Google Play</button>
+            <button><i class="fa-brands fa-apple"></i>App Store</button>
+        </div>
+    </section>
+    <footer></footer>
+
+    <script>
+        function showXmark(){
+            let searchWord = document.querySelector("#search_word");
+            let xmark = document.querySelector(".xmark");
+            if (searchWord.value != ""){
+                xmark.style.display = "block";
+            } else{
+                xmark.style.display = "none";
+            }
+        }
+
+        function deleteSearchWord(){
+            let searchWord = document.querySelector("#search_word");
+            let xmark = document.querySelector(".xmark");
+            searchWord.value = "";
+            xmark.style.display = "none";
+        }
+    </script>
+</body>
+</html>
